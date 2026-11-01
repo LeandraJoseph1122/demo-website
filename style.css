@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,12 +10,29 @@ header {
     background-color: #333;
     color: white;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
 }
 
 nav a {
     color: white;
     margin: 10px;
     text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
 }
 
 main {
@@ -24,4 +42,34 @@ main {
 button {
     padding: 10px 20px;
     cursor: pointer;
+}
+
+/* Mobile screen styling */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin: 10px;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav a {
+        padding: 10px;
+    }
 }
